@@ -66,7 +66,7 @@ Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com
 
 > dl21.pred.ap ('qid' \t 'pred_ap')
 
-- This file contains the predicted AP of each query in the test topic set. AP is measured as a weighted average of the outputs of the network as per the Equation 3 shown in the [paper](https://github.com/suchanadatta/qppBERT-PL/blob/master/sp1544.pdf).
+- This file contains the predicted AP of each query in the test topic set. AP is measured as a weighted average of the outputs of the network as per the Equation 3 in the [paper](https://github.com/suchanadatta/qppBERT-PL/blob/master/sp1544.pdf).
 
 ## Training
 
