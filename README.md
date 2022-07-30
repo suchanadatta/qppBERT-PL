@@ -31,9 +31,11 @@ Below, we illustrate these steps via an example run on the MS MARCO Passage coll
 
 We provide a [model checkpoint](https://drive.google.com/file/d/1XHcLgpkfWd3XnaQ5YKTkFdCqrU8-wGeO/view?usp=sharing) trained on TREC-DL-2019 + TREC-DL-2020 + a random sample of MS MARCO train set in [here](https://microsoft.github.io/msmarco/). To evaluate the model performance on [TREC-DL-2021](https://microsoft.github.io/msmarco/TREC-Deep-Learning-2021) topic set using the given trained model, you need the following:
 
-> [Index](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing)
-> [Collection]() - if not using from `ir-datasets`
-
+```
+[Index](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing)
+[Collection](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing) - if not loading from ir-datasets
+[Trained model](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing)
+```
 
 ## Both Traning and Evaluation
 
