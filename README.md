@@ -49,7 +49,7 @@ python eval.py \
 -- index <pah of the pisa index> \
 -- dataset <'irdataset' for loading from ir-datasets> \
 -- collection <path of the .pickle file only if not using ir-datasets> \
--- query <path of the queries.tsv file (test queries)> \
+-- query <path of the queries.tsv file (test queries), again if not loading from ir-datasets> \
 -- checkpoint <path of the pre-trained model> \
 -- batch-size <default is set to 4> \
 -- chunk-per-query <how many fixed-sized chunks to be taken into account during testing> 
@@ -66,13 +66,20 @@ Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com
 
 > dl21.pred.ap ('qid' \t 'pred_ap')
 
-- This file contains the predicted AP of each query in the test topic set. AP is measured as a weighted average of the outputs of the network as per the Equation 3 shown in the [paper]().
+- This file contains the predicted AP of each query in the test topic set. AP is measured as a weighted average of the outputs of the network as per the Equation 3 shown in the [paper](https://github.com/suchanadatta/qppBERT-PL/blob/master/sp1544.pdf).
 
 ## Training
 
-If you want to train a model on your own, follow the instructions below - 
-aaaaaaaaaaaaa
+If you want to train a model on your own, run the command below - 
 
+```
+python train.py \
+-- index <pah of the pisa index> \
+-- dataset <'irdataset' for loading from ir-datasets> \
+-- collection <path of the .pickle file only if not using ir-datasets> \
+-- query <path of the queries.tsv file (test queries), if not loading from ir-datasets> \
+-- batch-size <default is set to 4> \
+-- chunk-per-query <how many fixed-sized chunks to be taken into account during testing> 
+```
 
-
-
+Once you have the model trained, evaluate it with your desired test set following the steps in 'Use Model Checkpoint and Evaluate`
