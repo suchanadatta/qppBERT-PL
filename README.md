@@ -7,4 +7,9 @@
 </p>
 
 ## Installation
-> aaaaaaaaaa
+qppBERT-PL requires Python 3.7 and JAVA 11+ and uses a number of libraries enlisted in `requirements.txt`.
+
+We recommend creating a conda environment using:
+
+> conda env create -f conda_env.yml
+> conda activate qpp-bert
