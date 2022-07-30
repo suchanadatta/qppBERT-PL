@@ -82,4 +82,4 @@ python train.py \
 -- chunk-per-query <how many fixed-sized chunks to be taken into account during testing> 
 ```
 
-Once you have the model trained, evaluate it with your desired test set following the steps in 'Use Model Checkpoint and Evaluate`
+Once you have the model trained, evaluate it with your desired test set following the steps in 'Use Model Checkpoint and Evaluate`.
