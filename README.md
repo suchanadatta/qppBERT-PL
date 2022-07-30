@@ -57,16 +57,22 @@ python eval.py \
 
 ### Output
 
-Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com/suchanadatta/qppBERT-PL). 
-`eval.py` mainly produces two output files: 1. `dl21.reldocs` and 2. `dl21.pred.ap` - to be interpreted as follows-
+Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com/suchanadatta/qppBERT-PL). Note that predictions are made on chunk size 4 which can be varied as per the requirement. `eval.py` produces two main output files: 1. `dl21.reldocs` and 2. `dl21.pred.ap` - to be interpreted as follows-
 
-> dl21.reldocs ('qid' \t 'num_rels@100')
+> dl21.reldocs ('qid'\t'num_rels@100')
 
 - It is a 2-column .tsv file that records the total no. of relevant documents predicted by the model in top 100 BM25 ranked list for each query.
 
-> dl21.pred.ap ('qid' \t 'pred_ap')
+> dl21.pred.ap ('qid'\t'pred_ap')
 
 - This file contains the predicted AP of each query in the test topic set. AP is measured as a weighted average of the outputs of the network as per the Equation 3 in the [paper](https://github.com/suchanadatta/qppBERT-PL/blob/master/sp1544.pdf).
+
+Besides, eval.py generates two more intermmediate files - 1. `dl21.out` and 2. `dl21.pred`. These files help to analyze the estimated performance of each query at different cut-offs (through chunks).
+
+> dl21.out ('qid'\t'doc_id'\t'rank_in_chunk'\t'chunk_id'\t'num_rel_docs')
+
+> dl21.pred ('qid'\t'chunk_id'\t'num_rels_in_chunk')
+
 
 ## Training
 
