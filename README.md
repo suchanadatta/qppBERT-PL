@@ -19,17 +19,10 @@ conda activate qpp-bert
 
 Using this QPP model on a dataset typically involves the following steps.
 
-`Step 0:` Preprocess your collection. At its simplest, qppBERT-PL works with tab-separated (TSV) files: a file (e.g., collection.tsv) will contain all passages and another (e.g., queries.tsv) will contain a set of queries. 
+`Step 0:` Preprocess your collection. At its simplest, qppBERT-PL works with tab-separated (TSV) files: a file (e.g., collection.tsv) will contain all passages and another (e.g., queries.tsv) will contain a set of queries. Besides, it has the provision of loading collection/ queries/ qrels from `ir-datasets` too.
 
-Step 2: Index your collection to permit fast retrieval. This step encodes all passages into matrices, stores them on disk, and builds data structures for efficient search.
+`Step 2:` Index your collection to permit fast retrieval. This step encodes all passages into matrices, stores them on disk, and builds data structures for efficient search.
 
+`Step 3:` Search the collection with your queries. Given your model and index, you can issue queries over the collection to retrieve the top-k passages for each query.
 
-To experiment with TREC-DL-2021 topic set
-
-Step 1: Train a ColBERT model. You can train your own ColBERT model and validate performance on a suitable development set.
-
-Step 2: Index your collection. Once you're happy with your ColBERT model, you need to index your collection to permit fast retrieval. This step encodes all passages into matrices, stores them on disk, and builds data structures for efficient search.
-
-Step 3: Search the collection with your queries. Given your model and index, you can issue queries over the collection to retrieve the top-k passages for each query.
-
-Below, we illustrate these steps via an example run on the MS MARCO Passage Ranking task.
+Below, we illustrate these steps via an example run on the MS MARCO Passage collection and TREC-DL-2021 topic set.
