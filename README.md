@@ -60,13 +60,15 @@ python eval.py \
 Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com/suchanadatta/qppBERT-PL). 
 `eval.py` mainly produces two output files: 1. `dl21.reldocs` and 2. `dl21.pred.ap` - to be interpreted as follows-
 
-> dl21.reldocs
+> dl21.reldocs ('qid' \t 'num_rels@100')
 
 
 
-> dl21.pred.ap
+> dl21.pred.ap ('qid' \t 'pred_ap')
 
-## Traning
+## Training
+
+If you want to train a model on your own, follow the instructions below - 
 
 
 
