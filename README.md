@@ -62,9 +62,11 @@ Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com
 
 > dl21.reldocs ('qid' \t 'num_rels@100')
 
-
+- It is a 2-column .tsv file that records the total no. of relevant documents predicted by the model in top 100 BM25 ranked list for each query.
 
 > dl21.pred.ap ('qid' \t 'pred_ap')
+
+- This file contains the predicted AP of each query in the test topic set. AP is measured as a weighted average of the outputs of the network as per the Equation 3 shown in the [paper]().
 
 ## Training
 
