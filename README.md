@@ -71,6 +71,7 @@ Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com
 ## Training
 
 If you want to train a model on your own, follow the instructions below - 
+aaaaaaaaaaaaa
 
 
 
