@@ -45,17 +45,28 @@ To do the testing, you need the following:
 Run the following command:
 
 ```
-python eval.py
--- index <pah of the pisa index>
--- dataset <'irdataset' for loading from ir-datasets>
--- collection <path of the .pickle file only if not using ir-datasets>
--- query <path of the queries.tsv file (test queries)>
--- checkpoint <path of the pre-trained model>
--- batch-size <default is set to 4>
+python eval.py \
+-- index <pah of the pisa index> \
+-- dataset <'irdataset' for loading from ir-datasets> \
+-- collection <path of the .pickle file only if not using ir-datasets> \
+-- query <path of the queries.tsv file (test queries)> \
+-- checkpoint <path of the pre-trained model> \
+-- batch-size <default is set to 4> \
 -- chunk-per-query <how many fixed-sized chunks to be taken into account during testing> 
 ```
 
-## Both Traning and Evaluation
+### Output
+
+Model's outcome on TREC-DL-2021 topic set can be found [here](https://github.com/suchanadatta/qppBERT-PL). 
+`eval.py` mainly produces two output files: 1. `dl21.reldocs` and 2. `dl21.pred.ap` - to be interpreted as follows-
+
+> dl21.reldocs
+
+
+
+> dl21.pred.ap
+
+## Traning
 
 
 
