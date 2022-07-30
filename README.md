@@ -27,7 +27,7 @@ Using this QPP model on a dataset typically involves the following steps.
 
 Below, we illustrate these steps via an example run on the MS MARCO Passage collection and TREC-DL-2021 topic set.
 
-## Use Checkpoint and Evaluation
+## Use Model Checkpoint and Evaluate
 
 We provide a [model checkpoint](https://drive.google.com/file/d/1XHcLgpkfWd3XnaQ5YKTkFdCqrU8-wGeO/view?usp=sharing) trained on TREC-DL-2019 + TREC-DL-2020 + a random sample of MS MARCO train set, find [here](https://microsoft.github.io/msmarco/). Run the command below to evaluate the model performance on [TREC-DL-2021](https://microsoft.github.io/msmarco/TREC-Deep-Learning-2021) topic set using the given trained model.
 
