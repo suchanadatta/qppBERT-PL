@@ -89,3 +89,20 @@ python ./qpp_model/train.py \
 ```
 
 Once you have the model trained, evaluate it with your desired test set following the steps in 'Use Model Checkpoint and Evaluate`.
+
+## Cite
+
+```
+@inproceedings{DBLP:conf/sigir/DattaMGG22,
+  author    = {Suchana Datta and
+               Sean MacAvaney and
+               Debasis Ganguly and
+               Derek Greene},
+  title     = {A 'Pointwise-Query, Listwise-Document' based Query Performance Prediction
+               Approach},
+  booktitle = {{SIGIR}},
+  pages     = {2148--2153},
+  publisher = {{ACM}},
+  year      = {2022}
+}
+```
