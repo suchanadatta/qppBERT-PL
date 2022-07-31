@@ -42,10 +42,10 @@ To do the testing, you need the following:
 
 ### Evaluation
 
-Run the following command:
+Evaluate the performance of the model on test dataset using pre-trained model by running the following command:
 
 ```
-python eval.py \
+python ./qpp_model/eval.py \
 -- index <pah of the pisa index> \
 -- dataset <'irdataset' for loading from ir-datasets> \
 -- collection <path of the .pickle file only if not using ir-datasets> \
@@ -79,7 +79,7 @@ Besides, eval.py generates two more intermmediate files - 1. `dl21.out` and 2. `
 If you want to train a model on your own, run the command below - 
 
 ```
-python train.py \
+python ./qpp_model/train.py \
 -- index <pah of the pisa index> \
 -- dataset <'irdataset' for loading from ir-datasets> \
 -- collection <path of the .pickle file only if not using ir-datasets> \
