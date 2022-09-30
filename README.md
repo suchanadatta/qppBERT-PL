@@ -21,9 +21,9 @@ Using this QPP model on a dataset typically involves the following steps.
 
 `Step 0:` Preprocess your collection. At its simplest, qppBERT-PL works with tab-separated (TSV) files: a file (e.g., collection.tsv) will contain all passages and another (e.g., queries.tsv) will contain a set of queries. Besides, it has the provision of loading collection/ queries/ qrels from [ir-datasets](https://ir-datasets.com/) too. 
 
-`Step 2:` Index your collection to permit fast retrieval. This step encodes all passages into matrices, stores them on disk, and builds data structures for efficient search. We used [PyTerrier-pisa](https://github.com/terrier-org/pyterrier.git) specifically for this work. 
+`Step 1:` Index your collection to permit fast retrieval. This step encodes all passages into matrices, stores them on disk, and builds data structures for efficient search. We used [PyTerrier-pisa](https://github.com/terrier-org/pyterrier.git) specifically for this work. 
 
-`Step 3:` Search the collection with your queries. Given your model and index, you can issue queries over the collection to retrieve the top-k passages for each query.
+`Step 2:` Search the collection with your queries. Given your model and index, you can issue queries over the collection to retrieve the top-k passages for each query.
 
 Below, we illustrate these steps via an example run on the MS MARCO Passage collection and TREC-DL-2021 topic set.
 
@@ -42,10 +42,10 @@ To do the testing, you need the following:
 
 ### Evaluation
 
-Run the following command:
+Evaluate the performance of the model on test dataset using pre-trained model by running the following command:
 
 ```
-python eval.py \
+python ./qpp_model/eval.py \
 -- index <pah of the pisa index> \
 -- dataset <'irdataset' for loading from ir-datasets> \
 -- collection <path of the .pickle file only if not using ir-datasets> \
@@ -79,7 +79,7 @@ Besides, eval.py generates two more intermmediate files - 1. `dl21.out` and 2. `
 If you want to train a model on your own, run the command below - 
 
 ```
-python train.py \
+python ./qpp_model/train.py \
 -- index <pah of the pisa index> \
 -- dataset <'irdataset' for loading from ir-datasets> \
 -- collection <path of the .pickle file only if not using ir-datasets> \
@@ -89,3 +89,20 @@ python train.py \
 ```
 
 Once you have the model trained, evaluate it with your desired test set following the steps in 'Use Model Checkpoint and Evaluate`.
+
+## Cite
+
+```
+@inproceedings{DBLP:conf/sigir/DattaMGG22,
+  author    = {Suchana Datta and
+               Sean MacAvaney and
+               Debasis Ganguly and
+               Derek Greene},
+  title     = {A 'Pointwise-Query, Listwise-Document' based Query Performance Prediction
+               Approach},
+  booktitle = {{SIGIR}},
+  pages     = {2148--2153},
+  publisher = {{ACM}},
+  year      = {2022}
+}
+```
