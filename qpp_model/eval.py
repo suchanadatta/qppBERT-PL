@@ -32,7 +32,7 @@ class BertQppModel(torch.nn.Module):
         super().__init__()
         self.emb_dim = 768
         self.max_pos = 1000
-        # self.position_enc = torch.nn.Embedding(self.max_pos, self.emb_dim, padding_idx=0)
+        self.position_enc = torch.nn.Embedding(self.max_pos, self.emb_dim, padding_idx=0)
         self.bert = BertModel.from_pretrained(model_name)
         self.lstm = torch.nn.LSTM(input_size=self.emb_dim, hidden_size=self.bert.config.hidden_size,
                                   num_layers=1, bias=True, batch_first=False, dropout=0.2)
@@ -45,6 +45,7 @@ class BertQppModel(torch.nn.Module):
     def forward(self, input_ids, attention_mask, token_type_ids):
         res = self.bert(input_ids, attention_mask, token_type_ids).last_hidden_state  # [BATCH, LEN, DIM]
         res = res[:, 0]  # get CLS token rep [BATCH, DIM]
+        res = res + self.position_enc(torch.tensor([pos for pos in pos_list], dtype=torch.long))  # [BATCH, DIM]
         res = res.unsqueeze(1)  # [BATCH, 1, DIM]
         lstm_output, recent_hidden = self.lstm(res)  # [BATCH, DIM]
         return self.utility(recent_hidden[0].squeeze(1))
@@ -154,7 +155,7 @@ def main():
             inputs_test = tokeniser([query.text for _ in docs], [doc for doc in docs], padding=True,
                                     truncation='only_second',
                                     return_tensors='pt')
-            utility = model(**{k: v for k, v in inputs_test.items()})
+            utility = model(docpos, **{k: v for k, v in inputs_test.items()})
             reldocs = torch.argmax(utility).item()
             c = 0
             for x in res:
@@ -202,7 +203,7 @@ def main():
             inputs_test = tokeniser([qtext for _ in docs], [doc for doc in docs], padding=True,
                                     truncation='only_second',
                                     return_tensors='pt')
-            utility = model(**{k: v for k, v in inputs_test.items()})
+            utility = model(docpos, **{k: v for k, v in inputs_test.items()})
             reldocs = torch.argmax(utility).item()
             c = 0
             for x in res:
