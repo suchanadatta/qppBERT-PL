@@ -36,7 +36,7 @@ We provide a [model checkpoint](https://drive.google.com/file/d/1XHcLgpkfWd3XnaQ
 To do the testing, you need the following:
 
 1. [Index](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing)
-2. [Collection](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing) - MS MARCO Passage (v2) if not loading from [ir-datasets](https://ir-datasets.com/)
+2. [Collection](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing) - MS MARCO Passage (v2) if not loading from [ir-datasets](https://ir-datasets.com/). D/w the [pickle](https://drive.google.com/file/d/12dcXWHiJy0adTuhHWw72DobjZUQDWP0j/view?usp=share_link) dump from here.
 3. [Trained model](https://drive.google.com/file/d/1mxP4OMbXXk9BLaePF5pkc3lx4gb4jlNZ/view?usp=sharing)
 4. [TREC-DL-2021 topics](https://github.com/suchanadatta/qppBERT-PL/tree/master/data/trec-dl-2021)
 
