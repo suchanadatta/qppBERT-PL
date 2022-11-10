@@ -150,7 +150,7 @@ def main():
         rel_out = ''
         chunk_pred = open(args.outfile, 'a')
         rel_pred = open(args.per_chunk_pred, 'a')
-        for test_i in range(len(queries) * args.chunk_per_query * args.batch_size):
+        for test_i in range(len(queries) * args.chunk_per_query):
             query, res, docs, docpos, chunk_id = next(test_iter)
             inputs_test = tokeniser([query.text for _ in docs], [doc for doc in docs], padding=True,
                                     truncation='only_second',
@@ -198,7 +198,7 @@ def main():
         rel_out = ''
         chunk_pred = open(args.outfile, 'a')
         rel_pred = open(args.per_chunk_pred, 'a')
-        for test_i in range(len(q_dict) * args.chunk_per_query * args.batch_size):
+        for test_i in range(len(q_dict) * args.chunk_per_query):
             qid, qtext, res, docs, docpos, chunk_id = next(test_iter)
             inputs_test = tokeniser([qtext for _ in docs], [doc for doc in docs], padding=True,
                                     truncation='only_second',
